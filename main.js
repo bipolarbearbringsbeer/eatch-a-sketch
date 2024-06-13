@@ -3,7 +3,7 @@ let container = document.querySelector(".container");
 let row = document.createElement("div");
 row.classList.add("row");
 
-function addSquaresToRow() {
+function createField() {
     for (let i = 0; i < gridSize; i++) {
         let square = document.createElement("div");
         square.classList.add("square");
@@ -20,5 +20,5 @@ function addSquaresToRow() {
     }
 }
 
-addSquaresToRow();
+createField();
 
