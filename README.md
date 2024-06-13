@@ -1,2 +1,3 @@
-# eatch-a-sketch
+# Etch-a-Sketch
+
 Drawing game for The Odin Project
