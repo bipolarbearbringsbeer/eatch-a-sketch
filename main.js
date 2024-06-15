@@ -10,15 +10,10 @@ function createField() {
         row.appendChild(square);
     }
 
-    addRow();
-
-    function addRow() {
-        for (let i = 0; i < gridSize; i++) {
-            container.appendChild(row.cloneNode(true));
-            console.log("create");
-        }
+    while (gridSize > 0) {
+        container.appendChild(row.cloneNode(true));
+        gridSize -= 1;
     }
 }
 
 createField();
-
