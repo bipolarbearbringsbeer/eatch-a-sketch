@@ -44,8 +44,19 @@ function createField() {
     // Delegate event to container for better performance
     container.addEventListener("mousemove", (e) => {
         if (isMouseDown && e.target.classList.contains("square")) {
-            e.target.classList.add("color");
+            e.target.style.backgroundColor = createColor();
         }
     })
 
+}
+
+function createColor() {
+    const colorArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "A", "B", "C", "E", "F"];
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
+        color += colorArray[Math.floor(Math.random() * colorArray.length)];
+    }
+
+    return color;
 }
