@@ -1,3 +1,8 @@
+let startGame = document.querySelector("button");
+startGame.addEventListener("click", () => {
+    createField();
+});
+
 function createField() {
     let gridSize;
 
@@ -34,5 +39,3 @@ function createField() {
     })
 
 }
-
-createField();
