@@ -1,7 +1,14 @@
-let gridSize = 48;
-let container = document.querySelector(".container");
-
 function createField() {
+    let gridSize;
+
+    do {
+        gridSize = parseInt(prompt("Add drawing field size (between 10 and 100): "));
+    } while (isNaN(gridSize) || gridSize > 100 || gridSize < 10);
+
+
+    let container = document.querySelector(".container");
+    container.innerHTML = '';
+
     let fragment = document.createDocumentFragment();
 
     for (let i = 0; i < gridSize; i++) {
@@ -12,16 +19,19 @@ function createField() {
             let square = document.createElement("div");
             square.classList.add("square");
             row.appendChild(square);
-
-            square.addEventListener("mouseenter", () => {
-                square.classList.add("color");
-            })
         }
 
         fragment.appendChild(row);
     }
 
     container.appendChild(fragment);
+
+    // Delegate event to container for better performance
+    container.addEventListener("mouseover", (e) => {
+        if (e.target.classList.contains("square")) {
+            e.target.classList.add("color");
+        }
+    })
 
 }
 
