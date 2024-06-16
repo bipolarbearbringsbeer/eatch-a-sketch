@@ -31,9 +31,19 @@ function createField() {
 
     container.appendChild(fragment);
 
+    let isMouseDown = false;
+
+    document.addEventListener("mousedown", () => {
+        isMouseDown = true;
+    });
+
+    document.addEventListener("mouseup", () => {
+        isMouseDown = false;
+    })
+
     // Delegate event to container for better performance
-    container.addEventListener("mouseover", (e) => {
-        if (e.target.classList.contains("square")) {
+    container.addEventListener("mousemove", (e) => {
+        if (isMouseDown && e.target.classList.contains("square")) {
             e.target.classList.add("color");
         }
     })
