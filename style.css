@@ -4,6 +4,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+.container {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .row {
     display: flex;
 }
@@ -12,9 +16,9 @@ body {
     width: 5px;
     height: 0;
     padding-bottom: 5px;
-    background-color:blueviolet;
+    background-color: cornsilk;
 }
 
 .color {
-    background-color: aqua;
+    background-color: indigo;
 }
