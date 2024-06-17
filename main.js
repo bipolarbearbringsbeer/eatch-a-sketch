@@ -4,6 +4,7 @@ startGame.addEventListener("click", () => {
 });
 
 function createField() {
+    let opacity = 0;
     let gridSize;
 
     do {
@@ -44,7 +45,18 @@ function createField() {
     // Delegate event to container for better performance
     container.addEventListener("mousemove", (e) => {
         if (isMouseDown && e.target.classList.contains("square")) {
-            e.target.style.backgroundColor = createColor();
+            let square = e.target;
+
+            if (square.style.backgroundColor) {
+                let currentOpacity = parseFloat(square.style.opacity);
+                if (currentOpacity < 1) {
+                    currentOpacity += 0.1;
+                    square.style.opacity = currentOpacity;
+                }
+            } else {
+                square.style.backgroundColor = createColor();
+                square.style.opacity = 0.1;
+            }
         }
     })
 
